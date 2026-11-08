@@ -1,0 +1,931 @@
+
+/* ==========================================
+   1. GLOBAL STYLES
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f5f7fb;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   2. MAIN CONTAINER
+========================================== */
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+
+/* ==========================================
+   3. MAIN HEADER
+========================================== */
+
+.header {
+    background: #ffffff;
+    padding: 28px 32px;
+    border-radius: 14px;
+    margin-bottom: 28px;
+    border: 1px solid #e9edf5;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+.header h1 {
+    color: #2563eb;
+    font-size: 28px;
+    margin-bottom: 6px;
+}
+
+.header p {
+    color: #64748b;
+    font-size: 15px;
+}
+
+
+/* ==========================================
+   4. ANALYSIS CARD
+========================================== */
+
+.analysis-card {
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 14px;
+    border: 1px solid #e9edf5;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+.analysis-card h2 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.description {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 28px;
+}
+
+
+/* ==========================================
+   5. FORM ELEMENTS
+========================================== */
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 10px;
+}
+
+input[type="file"] {
+    width: 100%;
+    padding: 16px;
+    border: 1px dashed #94a3b8;
+    border-radius: 10px;
+    background: #f8fafc;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+input[type="file"]:hover {
+    border-color: #2563eb;
+    background: #f0f6ff;
+}
+
+textarea {
+    width: 100%;
+    min-height: 220px;
+    padding: 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    resize: vertical;
+    font-family: Consolas, monospace;
+    font-size: 13px;
+    line-height: 1.7;
+    color: #334155;
+    background: #ffffff;
+    outline: none;
+}
+
+textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+textarea::placeholder {
+    color: #94a3b8;
+}
+
+
+/* ==========================================
+   6. BUTTONS
+========================================== */
+
+button {
+    background: #2563eb;
+    color: #ffffff;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background: #1d4ed8;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+    transform: translateY(-1px);
+}
+
+button:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* ==========================================
+   7. DIVIDER
+========================================== */
+
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 28px 0;
+    color: #94a3b8;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #e2e8f0;
+}
+
+
+/* ==========================================
+   8. REPORT SUMMARY CARDS
+========================================== */
+
+.report-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 18px;
+    margin-top: 22px;
+}
+
+.report-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 22px;
+}
+
+.report-box h3 {
+    font-size: 30px;
+    color: #2563eb;
+    margin-bottom: 5px;
+}
+
+.report-box p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   9. REPORT TABLES
+========================================== */
+
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 18px;
+    background: #ffffff;
+}
+
+.report-table th {
+    background: #f1f5f9;
+    color: #334155;
+    text-align: left;
+    padding: 15px;
+    font-size: 14px;
+}
+
+.report-table td {
+    padding: 14px 15px;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 14px;
+    color: #475569;
+}
+
+.report-table tr:hover td {
+    background: #f8fafc;
+}
+
+
+/* ==========================================
+   10. NAVIGATION BUTTON
+========================================== */
+
+.back-button {
+    display: inline-block;
+    background: #2563eb;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 13px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.back-button:hover {
+    background: #1d4ed8;
+}
+
+
+/* ==========================================
+   11. DRAG AND DROP AREA
+========================================== */
+
+.drop-area {
+    border: 2px dashed #cbd5e1;
+    border-radius: 12px;
+    padding: 35px 20px;
+    text-align: center;
+    background: #f8fafc;
+    transition: all 0.2s ease;
+}
+
+.drop-area p {
+    color: #64748b;
+    margin-bottom: 8px;
+}
+
+.drop-area.drag-active {
+    border-color: #2563eb;
+    background: #eff6ff;
+}
+
+.browse-button {
+    display: inline-block;
+    background: #2563eb;
+    color: #ffffff !important;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+.browse-button:hover {
+    background: #1d4ed8;
+}
+
+.file-name {
+    font-size: 13px;
+    color: #2563eb !important;
+    margin-top: 12px;
+}
+
+
+/* ==========================================
+   12. ACTION BUTTONS
+========================================== */
+
+.action-buttons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.clear-button {
+    background: #e2e8f0;
+    color: #334155;
+}
+
+.clear-button:hover {
+    background: #cbd5e1;
+    box-shadow: none;
+}
+
+
+/* ==========================================
+   13. REPORT DETAILS PAGE
+========================================== */
+
+.report-page {
+    background: #f5f7fb;
+}
+
+.report-container {
+    width: 90%;
+    max-width: 1050px;
+    margin: 40px auto 55px;
+}
+
+
+/* Report Header */
+
+.report-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    background: #ffffff;
+    padding: 30px 34px;
+    border: 1px solid #e9edf5;
+    border-radius: 14px;
+    margin-bottom: 24px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+.eyebrow {
+    color: #2563eb;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    margin-bottom: 7px;
+}
+
+.report-header h1 {
+    font-size: 28px;
+    color: #1e293b;
+    margin-bottom: 5px;
+}
+
+.report-subtitle {
+    font-size: 14px;
+    color: #64748b;
+}
+
+
+/* Status Badge */
+
+.status-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.status-success {
+    color: #15803d;
+    background: #dcfce7;
+}
+
+.status-partial {
+    color: #a16207;
+    background: #fef3c7;
+}
+
+.status-failed {
+    color: #b91c1c;
+    background: #fee2e2;
+}
+
+
+/* Report Cards */
+
+.report-card {
+    display: block;
+    width: 100%;
+    background: #ffffff;
+    padding: 30px 32px;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    margin-bottom: 24px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.035);
+}
+
+.report-card h2 {
+    font-size: 20px;
+    color: #1e293b;
+    margin-bottom: 6px;
+}
+
+.report-card h3 {
+    font-size: 15px;
+    color: #334155;
+    margin-bottom: 13px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.section-heading p {
+    font-size: 13px;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+.report-id {
+    display: inline-block;
+    background: #eff6ff;
+    color: #2563eb;
+    padding: 8px 13px;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* ==========================================
+   14. REPORT INFORMATION CARDS
+========================================== */
+
+.report-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    width: 100%;
+}
+
+.report-info-grid .info-item {
+    display: block;
+    min-width: 0;
+    padding: 17px 19px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+}
+
+.info-item span {
+    display: block;
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.info-item strong {
+    display: block;
+    color: #1e293b;
+    font-size: 14px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+
+/* Summary Box */
+
+.summary-box {
+    background: #eff6ff;
+    border-left: 4px solid #2563eb;
+    padding: 18px 20px;
+    border-radius: 8px;
+    margin-top: 22px;
+}
+
+.summary-box span {
+    display: block;
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+.summary-box p {
+    color: #334155;
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   15. ANALYSIS METRIC CARDS
+========================================== */
+
+.report-card .report-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.report-card .report-box {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 11px;
+    padding: 22px;
+}
+
+.report-card .report-box h3 {
+    font-size: 29px;
+    color: #2563eb;
+    margin-bottom: 5px;
+}
+
+.report-card .report-box p {
+    color: #64748b;
+    font-size: 13px;
+}
+
+
+/* ==========================================
+   16. LOG FINDINGS
+========================================== */
+
+.findings-section {
+    margin-top: 28px;
+}
+
+.log-level-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 12px;
+}
+
+.log-level-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+}
+
+.log-level-item span {
+    font-size: 13px;
+    color: #475569;
+    font-weight: 600;
+}
+
+.log-level-item strong {
+    font-size: 16px;
+    color: #2563eb;
+}
+
+.findings-list,
+.timestamp-list,
+.message-list {
+    padding-left: 22px;
+    color: #475569;
+}
+
+.findings-list li,
+.timestamp-list li,
+.message-list li {
+    font-size: 13px;
+    padding: 7px 0;
+}
+
+.findings-list li strong {
+    color: #1e293b;
+    margin-left: 6px;
+}
+
+.timestamp-list {
+    columns: 2;
+    column-gap: 35px;
+}
+
+.timestamp-list li {
+    break-inside: avoid;
+}
+
+.warning-list li {
+    color: #a16207;
+}
+
+.error-list li {
+    color: #b91c1c;
+}
+
+
+/* ==========================================
+   17. DEVELOPER NOTES
+========================================== */
+
+.notes-card {
+    border-top: 4px solid #2563eb;
+}
+
+.notes-icon {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eff6ff;
+    color: #2563eb;
+    border-radius: 10px;
+    font-size: 22px;
+}
+
+.notes-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 10px;
+}
+
+.notes-textarea {
+    display: block;
+    width: 100%;
+    min-height: 155px;
+    padding: 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    background: #fbfdff;
+    color: #334155;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    resize: vertical;
+    outline: none;
+}
+
+.notes-textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
+    background: #ffffff;
+}
+
+.notes-textarea::placeholder {
+    color: #94a3b8;
+}
+
+.notes-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-top: 18px;
+}
+
+.notes-hint {
+    color: #94a3b8;
+    font-size: 12px;
+}
+
+.save-notes-button {
+    width: auto;
+    padding: 12px 25px;
+    font-size: 14px;
+    border-radius: 8px;
+}
+
+
+/* ==========================================
+   18. SUCCESS MESSAGE
+========================================== */
+
+.success-message {
+    background: #ecfdf5;
+    border: 1px solid #bbf7d0;
+    color: #166534;
+    border-radius: 9px;
+    padding: 15px 18px;
+    font-size: 13px;
+    margin-bottom: 22px;
+}
+
+
+/* ==========================================
+   19. REPORT NAVIGATION
+========================================== */
+
+.report-navigation {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+}
+
+.secondary-link {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.secondary-link:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+
+/* ==========================================
+   20. RESPONSIVE DESIGN
+========================================== */
+
+@media (max-width: 768px) {
+
+    .container,
+    .report-container {
+        width: 94%;
+        margin: 20px auto;
+    }
+
+    .header,
+    .analysis-card {
+        padding: 22px;
+    }
+
+    .header h1,
+    .report-header h1 {
+        font-size: 23px;
+    }
+
+    .report-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 23px;
+    }
+
+    .report-card {
+        padding: 22px;
+    }
+
+    .report-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .report-card .report-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .timestamp-list {
+        columns: 1;
+    }
+
+    .notes-footer {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .save-notes-button {
+        width: 100%;
+    }
+
+    .report-navigation {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+    }
+
+    .report-navigation a {
+        text-align: center;
+    }
+
+    .report-navigation .back-button {
+        width: 100%;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .action-buttons button {
+        width: 100%;
+    }
+
+    .report-table th,
+    .report-table td {
+        padding: 10px;
+    }
+}
+
+/* ==========================================
+   21. SAVED DEVELOPER NOTES DISPLAY
+========================================== */
+
+.saved-notes-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.saved-notes-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    color: #64748b;
+    margin-bottom: 12px;
+}
+
+.saved-notes-content {
+    color: #334155;
+    font-size: 14px;
+    line-height: 1.9;
+    overflow-wrap: anywhere;
+}
+
+.empty-notes-box {
+    background: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+}
+
+.empty-notes-box p {
+    color: #475569;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.empty-notes-box span {
+    display: block;
+    color: #94a3b8;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.cancel-notes-button {
+    background: #e2e8f0;
+    color: #334155;
+    padding: 12px 23px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.cancel-notes-button:hover {
+    background: #cbd5e1;
+    box-shadow: none;
+}
+
+/* ==========================================
+   22. DEVELOPER NOTES WIDTH AND SPACING FIX
+========================================== */
+
+.notes-card,
+.notes-card form,
+.notes-card #saved_notes_section,
+.notes-card #edit_notes_section {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.notes-card .notes-textarea {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.notes-card .notes-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.notes-card .notes-footer button {
+    flex: 0 0 auto;
+    margin: 0;
+}
+
+.notes-card .report-navigation {
+    margin-top: 28px;
+}
+
+@media (max-width: 768px) {
+    .notes-card .notes-footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .notes-card .notes-footer button {
+        width: 100%;
+    }
+}

@@ -1,0 +1,22 @@
+# Composer dependencies
+/vendor/
+
+# Uploaded files
+/uploads/*
+!/uploads/.gitkeep
+
+# Temporary test files
+large_test.txt
+security_test.txt
+
+# Local database configuration
+/config/database.php
+
+# Environment and local files
+.env
+.env.*
+!.env.example
+
+# Operating system files
+.DS_Store
+Thumbs.db
